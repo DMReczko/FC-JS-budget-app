@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,600;1,300&display=swap"
+            rel="stylesheet"
+        />
+        <title>StayAfloat</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <main class="container">
+            <header>
+                <img
+                    src="imgs/wallet.png"
+                    alt="app logo depicting a full wallet"
+                    id="logo"
+                />
+                <h1 id="logo-text">StayAfloat</h1>
+                <div id="budget-tally">Dodaj swoje przychody i wydatki</div>
+            </header>
+            <div class="budget">
+                <div class="budget-list" id="income">
+                    <h2 class="list-header">Przychody</h2>
+                    <form id="income-form">
+                        <input
+                            type="text"
+                            placeholder="Nazwa przychodu"
+                            id="income-text"
+                        />
+                        <input
+                            type="number"
+                            step="0.01"
+                            placeholder="0.00"
+                            id="income-value"
+                        />
+                        <input
+                            type="submit"
+                            value="Dodaj"
+                            class="form-btn"
+                            id="income-submit-btn"
+                        />
+                    </form>
+                    <hr />
+                    <ul id="income-list"></ul>
+                    <p class="sum">
+                        Suma przychodów: <span id="income-sum"></span> zł
+                    </p>
+                </div>
+
+                <div class="budget-list" id="expense">
+                    <h2 class="list-header">Wydatki</h2>
+                    <form id="expense-form">
+                        <input
+                            type="text"
+                            placeholder="Nazwa wydatku"
+                            id="expense-text"
+                        />
+                        <input
+                            type="number"
+                            step="0.01"
+                            placeholder="0.00"
+                            id="expense-value"
+                        />
+                        <input
+                            type="submit"
+                            value="Dodaj"
+                            class="form-btn"
+                            id="expense-submit-btn"
+                        />
+                    </form>
+                    <hr />
+                    <ul id="expense-list"></ul>
+                    <p class="sum">
+                        Suma wydatków: <span id="expense-sum"></span> zł
+                    </p>
+                </div>
+            </div>
+        </main>
+        <script type="module" src="js/index.js"></script>
+        <!--<a href="https://www.flaticon.com/free-icons/wallet" title="wallet icons">Wallet icons created by Freepik - Flaticon</a>-->
+    </body>
+</html>

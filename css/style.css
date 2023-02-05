@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: Nunito;
+    color: #343432;
+    background: #fdeacf;
+    font-weight: 600;
+}
+
+.container {
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+header {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    position: sticky;
+    z-index: 1000;
+}
+
+#logo {
+    height: 75px;
+    width: 75px;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#budget-tally {
+    font-size: 26px;
+    margin: 20px auto;
+}
+
+.budget {
+    display: flex;
+    justify-content: space-around;
+}
+
+.budget-list {
+    border: solid 2px #343432;
+    width: 50%;
+    min-height: 300px;
+    padding: 10px;
+    gap: 20px;
+    position: relative;
+    padding-bottom: 60px;
+    border-radius: 2%;
+}
+
+input {
+    padding: 3px;
+    margin: 3px;
+    font-family: Nunito;
+}
+
+input:focus {
+    border: 2px solid #343432;
+}
+
+input[type="number"] {
+    width: 50%;
+}
+
+input[type="text"] {
+    width: 80%;
+}
+
+input[type="submit"] {
+    background-color: #343432;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+hr {
+    width: 98%;
+    margin: 20px auto;
+    height: 2.5px;
+    color: #343432;
+    background-color: #343432;
+}
+
+ul {
+    margin-left: 3px;
+    list-style-position: inside;
+}
+
+li {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+li > * {
+    margin-top: 6px;
+    margin-right: 6px;
+}
+
+button {
+    padding: 3px;
+    font-family: Nunito;
+    background-color: #60605b;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.sum {
+    position: absolute;
+    bottom: 10px;
+    margin-top: 20px;
+}
+
+.tally-red {
+    color: rgb(218, 14, 14);
+}
+
+.tally-ok {
+    color: #668b27;
+}
+
+/*---  Media queries  - Tablet ---*/
+
+@media screen and (min-width: 768px) {
+    .container {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+
+    input[type="number"] {
+        width: 120px;
+    }
+
+    input[type="text"] {
+        width: 200px;
+    }
+}
+
+/*---  Media queries  - Laptop ---*/
+
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 960px;
+        margin: 0 auto;
+    }
+}
