@@ -27,9 +27,16 @@ const editElement = (event) => {
     const incomeName = parentNode.querySelector(".income-name");
     const incomeValue = parentNode.querySelector(".income-amount");
     if (isEditMode(incomeName, incomeValue)) {
-        incomeName.contentEditable = "false";
-        incomeValue.contentEditable = "false";
-        button.innerHTML = "Edytuj";
+        if (isNaN(incomeValue.textContent)) {
+            return alert("Wprowadź poprawną kwotę");
+        } else {
+            incomeValue.textContent = parseFloat(
+                incomeValue.textContent
+            ).toFixed(2);
+            incomeName.contentEditable = "false";
+            incomeValue.contentEditable = "false";
+            button.innerHTML = "Edytuj";
+        }
     } else {
         incomeName.contentEditable = "true";
         incomeValue.contentEditable = "true";
@@ -49,13 +56,17 @@ const isEditMode = (incomeName, incomeValue) => {
 export const addIncome = () => {
     const incomeName = addIncomeText.value;
     const incomeAmount = parseFloat(incomeValue.value).toFixed(2);
-    const incomeListElem = document.createElement("li");
-    const deleteBtn = createBtn("Usuń", "delete-btn", deleteIncome);
-    const editBtn = createBtn("Edytuj", "edit-btn", editElement);
-    incomeListElem.id = Math.floor(Math.random() * 10000);
-    incomeListElem.innerHTML = `<div class="income-name">${incomeName}</div><div class="income-amount">${incomeAmount}</div><div class = "currency">zł</div>`;
-    incomeListElem.appendChild(editBtn);
-    incomeListElem.appendChild(deleteBtn);
-    incomeListElem.id = Math.floor(Math.random() * 10000);
-    incomeList.appendChild(incomeListElem);
+    if (incomeAmount && incomeAmount > 0 && incomeName.trim()) {
+        const incomeListElem = document.createElement("li");
+        const deleteBtn = createBtn("Usuń", "delete-btn", deleteIncome);
+        const editBtn = createBtn("Edytuj", "edit-btn", editElement);
+        incomeListElem.id = Math.floor(Math.random() * 10000);
+        incomeListElem.innerHTML = `<div class="income-name">${incomeName}</div><div class="income-amount">${incomeAmount}</div><div class = "currency">zł</div>`;
+        incomeListElem.appendChild(editBtn);
+        incomeListElem.appendChild(deleteBtn);
+        incomeListElem.id = Math.floor(Math.random() * 10000);
+        incomeList.appendChild(incomeListElem);
+    } else {
+        alert("Wpisz poprawne wartości w oba pola");
+    }
 };
