@@ -1,17 +1,10 @@
 import { sumupIncome } from "./sums.js";
 import { budgetTally } from "./tally.js";
+import { createBtn } from "./utils.js";
 
 const addIncomeText = document.querySelector("#income-text");
 const incomeList = document.querySelector("#income-list");
 const incomeValue = document.querySelector("#income-value");
-
-const createBtn = (text, classList, onclickFunc) => {
-    const Btn = document.createElement("button");
-    Btn.innerText = text;
-    Btn.classList.add(classList);
-    Btn.addEventListener("click", onclickFunc);
-    return Btn;
-};
 
 const deleteIncome = (event) => {
     event.preventDefault();
@@ -36,6 +29,8 @@ const editElement = (event) => {
             incomeName.contentEditable = "false";
             incomeValue.contentEditable = "false";
             button.innerHTML = "Edytuj";
+            incomeName.classList.remove("input-edit");
+            incomeValue.classList.remove("input-edit");
         }
     } else {
         incomeName.contentEditable = "true";
@@ -47,6 +42,8 @@ const editElement = (event) => {
 };
 
 const isEditMode = (incomeName, incomeValue) => {
+    incomeName.classList.add("input-edit");
+    incomeValue.classList.add("input-edit");
     return (
         (incomeName.contentEditable == "true") |
         (incomeValue.contentEditable == "true")
@@ -66,6 +63,8 @@ export const addIncome = () => {
         incomeListElem.appendChild(deleteBtn);
         incomeListElem.id = Math.floor(Math.random() * 10000);
         incomeList.appendChild(incomeListElem);
+        addIncomeText.value = "";
+        incomeValue.value = "";
     } else {
         alert("Wpisz poprawne wartości w oba pola");
     }

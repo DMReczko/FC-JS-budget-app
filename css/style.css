@@ -121,6 +121,13 @@ button {
     cursor: pointer;
 }
 
+.input-edit {
+    border: solid 2px #60605b;
+    border-radius: 5%;
+    background-color: white;
+    padding: 3px;
+}
+
 .sum {
     position: absolute;
     bottom: 10px;

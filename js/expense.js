@@ -1,17 +1,10 @@
 import { sumupExpense } from "./sums.js";
 import { budgetTally } from "./tally.js";
+import { createBtn } from "./utils.js";
 
 const addExpenseText = document.querySelector("#expense-text");
 const expenseList = document.querySelector("#expense-list");
 const expenseValue = document.querySelector("#expense-value");
-
-const createBtn = (text, classList, onclickFunc) => {
-    const Btn = document.createElement("button");
-    Btn.innerText = text;
-    Btn.classList.add(classList);
-    Btn.addEventListener("click", onclickFunc);
-    return Btn;
-};
 
 const deleteExpense = (event) => {
     event.preventDefault();
@@ -36,6 +29,8 @@ const editElement = (event) => {
             expenseName.contentEditable = "false";
             expenseValue.contentEditable = "false";
             button.innerHTML = "Edytuj";
+            expenseName.classList.remove("input-edit");
+            expenseValue.classList.remove("input-edit");
         }
     } else {
         expenseName.contentEditable = "true";
@@ -47,6 +42,8 @@ const editElement = (event) => {
 };
 
 const isEditMode = (expenseName, expenseValue) => {
+    expenseName.classList.add("input-edit");
+    expenseValue.classList.add("input-edit");
     return (
         (expenseName.contentEditable == "true") |
         (expenseValue.contentEditable == "true")
@@ -66,6 +63,8 @@ export const addExpense = () => {
         expenseListElem.appendChild(deleteBtn);
         expenseListElem.id = Math.floor(Math.random() * 10000);
         expenseList.appendChild(expenseListElem);
+        addExpenseText.value = "";
+        expenseValue.value = "";
     } else {
         alert("Wpisz poprawne wartości w oba pola");
     }
