@@ -8,14 +8,18 @@ const expenseForm = document.querySelector("#expense-form");
 
 const incomeSubmit = (event) => {
     event.preventDefault();
+
     addIncome();
     sumupIncome();
+    sumupExpense();
     budgetTally();
 };
 
 const expenseSubmit = (event) => {
     event.preventDefault();
+
     addExpense();
+    sumupIncome();
     sumupExpense();
     budgetTally();
 };
