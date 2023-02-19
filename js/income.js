@@ -67,7 +67,7 @@ export const addIncome = () => {
         const editBtn = createBtn("Edytuj", "edit-btn", editElement);
 
         incomeListElem.id = Math.floor(Math.random() * 10000);
-        incomeListElem.innerHTML = `<div class="income-name">${incomeName}</div><div class="income-amount">${incomeAmount} zł</div>`;
+        incomeListElem.innerHTML = `<div class="income-name">${incomeName}</div><div class="income-amount">${incomeAmount}</div>`;
         incomeListElem.appendChild(editBtn);
         incomeListElem.appendChild(deleteBtn);
         incomeListElem.id = Math.floor(Math.random() * 10000);

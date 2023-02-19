@@ -114,6 +114,11 @@ li > * {
     overflow-wrap: break-word;
 }
 
+.income-amount::after,
+.expense-amount::after {
+    content: "zł";
+}
+
 button {
     font-family: inherit;
     background-color: #60605b;
