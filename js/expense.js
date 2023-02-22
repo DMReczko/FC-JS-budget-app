@@ -25,8 +25,8 @@ const editElement = (event) => {
 
   if (isEditMode(expenseName, expenseValue)) {
     if (
-      isNaN(expenseValue.textContent) |
-      (expenseValue.textContent.trim() == "")
+      isNaN(expenseValue.textContent) ||
+      expenseValue.textContent.trim() == ""
     ) {
       return alert("Wprowadź poprawną kwotę");
     } else {
