@@ -75,7 +75,6 @@ export const addExpense = () => {
     expenseListElem.innerHTML = `<div class="expense-name">${expenseName}</div><div class="expense-amount">${expenseAmount}</div>`;
     expenseListElem.appendChild(editBtn);
     expenseListElem.appendChild(deleteBtn);
-    expenseListElem.id = Math.floor(Math.random() * 10000);
 
     expenseList.appendChild(expenseListElem);
 

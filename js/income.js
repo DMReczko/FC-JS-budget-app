@@ -73,7 +73,6 @@ export const addIncome = () => {
     incomeListElem.innerHTML = `<div class="income-name">${incomeName}</div><div class="income-amount">${incomeAmount}</div>`;
     incomeListElem.appendChild(editBtn);
     incomeListElem.appendChild(deleteBtn);
-    incomeListElem.id = Math.floor(Math.random() * 10000);
 
     incomeList.appendChild(incomeListElem);
 
