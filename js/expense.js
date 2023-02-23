@@ -27,7 +27,8 @@ const editElement = (event) => {
     if (
       isNaN(expenseValue.textContent) ||
       expenseValue.textContent.trim() === "" ||
-      expenseName.textContent.trim() === ""
+      expenseName.textContent.trim() === "" ||
+      expenseValue.textContent < 0
     ) {
       return alert("Wprowadź poprawne wartości");
     } else {
